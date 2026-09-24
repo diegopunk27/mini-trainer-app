@@ -1,0 +1,18 @@
+@use 'fonts';
+@use 'variables' as *;
+
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: $white-gray-background !important;
+  color: $text-primary;
+}
+
+.cursor-pointer {
+  cursor: pointer !important;
+}

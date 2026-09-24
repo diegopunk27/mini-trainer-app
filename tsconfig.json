@@ -1,0 +1,43 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+
+    /* Path Aliases */
+    "paths": {
+      "@assets/*": ["./src/assets/*"],
+      "@theme/*": ["./src/modules/common/theme/*"],
+      "@common/*": ["./src/modules/common/*"],
+      "@common-assets/*": ["./src/modules/common/assets/*"],
+      "@common-components/*": ["./src/modules/common/components/*"],
+      "@common-constants/*": ["./src/modules/common/constants/*"],
+      "@common-contexts/*": ["./src/modules/common/contexts/*"],
+      "@common-hooks/*": ["./src/modules/common/hooks/*"],
+      "@common-interfaces/*": ["./src/modules/common/interfaces/local/*"],
+      "@common-pages/*": ["./src/modules/common/pages/*"],
+      "@common-requests/*": ["./src/modules/common/interfaces/api/requests/*"],
+      "@common-responses/*": ["./src/modules/common/interfaces/api/responses/*"],
+      "@common-service-models/*": ["./src/modules/common/interfaces/api/services/*"],
+      "@common-services/*": ["./src/modules/common/services/*"],
+      "@global-constants/*": ["./src/modules/global/constants/*"],
+      "@global-contexts/*": ["./src/modules/global/contexts/*"],
+      "@global-pages/*": ["./src/modules/global/pages/*"],
+      "@routes/*": ["./src/routes/*"],
+      "@test-utils/*": ["./src/test-utils/*"],
+      "@utils/*": ["./src/utils/*"]
+    }
+  },
+  "include": ["src", "./vitest.setup.ts"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}

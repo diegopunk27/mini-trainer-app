@@ -1,0 +1,92 @@
+{
+  "name": "mini-trainer-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "packageManager": "yarn@1.22.22",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "check-rules": "npm run check-naming-convention && npx lint-staged",
+    "check-naming-convention": "node ./naming-checker.mjs",
+    "lint": "eslint . --report-unused-disable-directives --max-warnings 5",
+    "lint-check": "npm run check-naming-convention && eslint . --report-unused-disable-directives --max-warnings 5",
+    "preview": "vite preview",
+    "postinstall": "husky",
+    "pre-commit": "lint-staged",
+    "prettier": "prettier --write",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^9.3.1",
+    "@mui/material": "^9.3.1",
+    "ag-grid-community": "^36.1.0",
+    "ag-grid-react": "^36.1.0",
+    "axios": "^1.19.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-promise-tracker": "^2.1.1",
+    "react-router-dom": "^7.18.2",
+    "react-toastify": "^11.1.0",
+    "sass": "^1.103.1",
+    "swr": "^2.5.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^6.8.0",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.6",
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "@vitejs/plugin-react-swc": "^4.3.3",
+    "@vitest/coverage-v8": "^4",
+    "eslint": "^10.9.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-project-structure": "^3.14.3",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.4",
+    "globals": "^16.5.0",
+    "husky": "^9.1.7",
+    "jsdom": "^27.0.1",
+    "lint-staged": "^16.2.7",
+    "prettier": "^3.6.2",
+    "typescript": "6.0.3",
+    "typescript-eslint": "^8.56.1",
+    "vite": "^8.2.2",
+    "vitest": "^4.1.11"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --cache --fix",
+      "prettier --write"
+    ],
+    "*.tsx": [
+      "eslint --cache --fix",
+      "prettier --write"
+    ],
+    "*.js": [
+      "eslint --cache --fix",
+      "prettier --write"
+    ],
+    "*.jsx": [
+      "eslint --cache --fix",
+      "prettier --write"
+    ],
+    "*.scss": [
+      "prettier --write"
+    ],
+    "*.json": [
+      "prettier --write"
+    ],
+    "*.md": [
+      "prettier --write"
+    ]
+  }
+}

@@ -1,0 +1,211 @@
+{
+  "structureRoot": ".",
+  "structure": [
+    { "name": "*" },
+    {
+      "name": "src",
+      "children": [
+        { "name": "App.tsx" },
+        { "name": "main.tsx" },
+        { "name": "vite-env.d.ts" },
+        {
+          "name": "test-utils",
+          "children": [{ "name": "CustomRender.tsx" }]
+        },
+        {
+          "name": "assets",
+          "children": [
+            {
+              "name": "scss",
+              "children": [{ "name": "{kebab-case}.scss" }]
+            },
+            { "name": "*" }
+          ]
+        },
+        {
+          "name": "modules",
+          "children": [
+            {
+              "name": "{kebab-case}",
+              "ruleId": "featureModule"
+            }
+          ]
+        },
+        {
+          "name": "routes",
+          "children": [
+            { "name": "{PascalCase}.tsx" },
+            { "name": "{PascalCase}.route.tsx" },
+            { "name": "index.ts" }
+          ]
+        },
+        {
+          "name": "utils",
+          "children": [
+            { "name": "{kebab-case}.ts" },
+            { "name": "index.ts" },
+            {
+              "name": "tests",
+              "children": [{ "name": "{kebab-case}.test.ts" }]
+            }
+          ]
+        },
+        { "name": "theme", "children": [{ "name": "*" }] }
+      ]
+    }
+  ],
+  "rules": {
+    "featureModule": {
+      "children": [
+        { "name": "index.ts" },
+        {
+          "name": "components",
+          "children": [
+            { "name": "index.ts" },
+            {
+              "name": "tests",
+              "children": [{ "name": "{PascalCase}.test.tsx" }, { "name": "{PascalCase}.test.ts" }]
+            },
+            {
+              "name": "{PascalCase}",
+              "children": [
+                { "name": "{PascalCase}.component.tsx" },
+                { "name": "{PascalCase}.tsx" },
+                { "name": "index.ts" },
+                { "name": "{kebab-case}.scss" }
+              ]
+            },
+            { "name": "{PascalCase}.tsx" },
+            { "name": "icons", "children": [{ "name": "{PascalCase}.tsx" }] },
+            {
+              "name": "navbar",
+              "children": [{ "name": "{PascalCase}.tsx" }, { "name": "index.ts" }]
+            }
+          ]
+        },
+        {
+          "name": "contexts",
+          "children": [
+            { "name": "index.ts" },
+            {
+              "name": "{PascalCase}",
+              "children": [
+                { "name": "{PascalCase}.context.tsx" },
+                { "name": "{PascalCase}.provider.tsx" },
+                { "name": "index.ts" }
+              ]
+            },
+            {
+              "name": "{kebab-case}",
+              "children": [
+                { "name": "{kebab-case}.ts" },
+                { "name": "{kebab-case}.tsx" },
+                { "name": "index.ts" }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "hooks",
+          "children": [
+            { "name": "index.ts" },
+            { "name": "use{PascalCase}.ts" },
+            { "name": "use{PascalCase}.tsx" },
+            {
+              "name": "tests",
+              "children": [
+                { "name": "use{PascalCase}.test.ts" },
+                { "name": "use{PascalCase}.test.tsx" }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "interfaces",
+          "children": [
+            { "name": "index.ts" },
+            { "name": "{kebab-case}.interface.ts" },
+            {
+              "name": "{kebab-case}",
+              "children": [
+                { "name": "{kebab-case}.interface.ts" },
+                { "name": "{PascalCase}.interface.ts" },
+                { "name": "index.ts" },
+                {
+                  "name": "{kebab-case}",
+                  "children": [
+                    { "name": "{kebab-case}.interface.ts" },
+                    { "name": "{PascalCase}.interface.ts" },
+                    { "name": "index.ts" }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "pages",
+          "children": [
+            { "name": "index.ts" },
+            {
+              "name": "{PascalCase}",
+              "children": [
+                { "name": "{PascalCase}.page.tsx" },
+                { "name": "{PascalCase}.component.tsx" },
+                { "name": "index.ts" }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "services",
+          "children": [
+            { "name": "index.ts" },
+            { "name": "{kebab-case}.service.ts" },
+            { "name": "{PascalCase}.service.ts" },
+            { "name": "Services.ts" },
+            {
+              "name": "http",
+              "children": [{ "name": "{kebab-case}.service.ts" }]
+            },
+            {
+              "name": "file",
+              "children": [{ "name": "{kebab-case}.service.ts" }]
+            }
+          ]
+        },
+        {
+          "name": "theme",
+          "children": [{ "name": "app-theme.ts" }, { "name": "ag-grid-theme.ts" }]
+        },
+        {
+          "name": "constants",
+          "children": [{ "name": "{kebab-case}.ts" }, { "name": "index.ts" }]
+        },
+        {
+          "name": "enums",
+          "children": [{ "name": "{kebab-case}.enum.ts" }, { "name": "index.ts" }]
+        },
+        {
+          "name": "utils",
+          "children": [
+            { "name": "{kebab-case}.ts" },
+            { "name": "index.ts" },
+            {
+              "name": "tests",
+              "children": [{ "name": "{kebab-case}.test.ts" }]
+            }
+          ]
+        },
+        {
+          "name": "styles",
+          "children": [{ "name": "{kebab-case}.scss" }]
+        },
+        {
+          "name": "config",
+          "children": [{ "name": "{kebab-case}.ts" }]
+        }
+      ]
+    }
+  }
+}

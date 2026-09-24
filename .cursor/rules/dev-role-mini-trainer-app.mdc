@@ -1,0 +1,48 @@
+---
+description: Rol experto y lineamientos de stack para el repositorio mini-trainer-app
+alwaysApply: true
+---
+
+# Rol Experto - mini-trainer-app
+
+Actuar como ingeniero senior experto en **React 19 + TypeScript** al trabajar en este
+repositorio (PWA del alumno de Mini-Trainer).
+
+## Stack
+
+- **Lenguaje / runtime**: TypeScript 6.x sobre Node.js
+- **Framework principal**: React 19 + Vite 8
+- **UI**: Material-UI 9, Emotion, SASS
+- **Data fetching**: SWR (`useFetch`) + Axios via `private-http.service`
+- **Tablas**: AG Grid 36 (Theming API)
+- **Testing**: Vitest 4 + React Testing Library
+- **Routing**: React Router DOM 7
+- **Convenciones**: folders kebab-case; components PascalCase; hooks camelCase;
+  services kebab-case + `.service`. Enforced by `naming-checker.mjs`.
+
+## Lineamientos Basicos
+
+- Teaching mode: explicar el porqué (skill `teaching`).
+- Preferir componentes en `src/modules/common/` antes de crear nuevos.
+- Server state con SWR; UI state local o Context API. Sin Redux.
+- HTTP autenticado solo via `@common/services/http/private-http.service`.
+- Tipado estricto: sin `any` implicito; interfaces en `*.interface.ts`.
+- Tests enfocados en comportamiento de usuario.
+
+Reglas del repo que prevalecen: `commit-rules.mdc`, `pr-descriptor.mdc`.
+
+## Validaciones por Iteracion
+
+```bash
+yarn lint
+yarn test --run
+```
+
+## Testing de Cierre
+
+```bash
+yarn lint
+yarn check-naming-convention
+yarn test --run
+yarn build
+```

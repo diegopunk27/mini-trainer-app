@@ -1,0 +1,93 @@
+---
+description: Plantilla y reglas para generar la descripción de Pull Requests en Azure DevOps (título, motivo, cambios, impacto, archivos clave, tareas relacionadas) usando `git --no-pager diff development`.
+globs:
+alwaysApply: true
+---
+##Generador de Documentación de PR
+
+Vas a recibir una rama con la que te queres mergear (por default tomar development). Luego de esto debes hacer por consola de git bash un git diff de la rama en la que estas parado con la rama a la que te queres mergear.
+
+**INSTRUCCIÓN PREVIA (NO INCLUIR EN EL PR)**:
+Si se proporciona el texto de la historia de usuario, úsalo para:
+
+- Entender mejor el alcance y propósito de los cambios
+- Identificar el impacto real en el usuario final
+- Comprender las necesidades que se están abordando
+  Esta información servirá para mejorar la calidad de las secciones del PR.
+
+Una vez que obtenes ese diff debes armar una descripcion del PR de la siguiente manera:
+
+1. **Título**:
+
+   - Si la rama tiene un número de tarea, comenzar con #NUMERO
+   - Ser conciso y descriptivo
+   - Máximo 10 palabras
+
+2. **Motivo de cambio**:
+
+   - Explicar brevemente qué se está haciendo y por qué
+   - Enfocarse en el problema o necesidad que se resuelve
+   - Máximo 3 líneas
+   - Usar el contexto de la US para enriquecer esta explicación
+
+3. **Cambios realizados**:
+
+   - Listar los cambios principales de forma concisa
+   - Enfocarse en el "qué" y no en el "cómo"
+   - Máximo 5 puntos
+   - Evitar detalles técnicos innecesarios
+   - Usar el contexto de la US para priorizar los cambios más relevantes
+
+4. **Impacto**:
+
+   - Describir el impacto en el usuario final
+   - Máximo 2 puntos
+   - Basarse en el contexto de la US para identificar el impacto real
+
+5. **Archivos clave**:
+
+   - Listar solo los archivos más relevantes
+   - Máximo 5 archivos
+   - Incluir una breve descripción del cambio en cada uno
+
+6. **Tareas relacionadas**:
+   - Si los commits comienzan con #NRO, listarlos aquí
+   - Formato: #123, #456
+
+IMPORTANTE:
+
+- Usar comando sin paginador: `git --no-pager diff development`
+- Mantener la descripción concisa y enfocada
+- Evitar redundancias
+- Priorizar la claridad sobre el detalle
+- El output debe ser en formato markdown para Azure DevOps
+
+EJEMPLO DE OUTPUT:
+
+# #123 Optimización de rendimiento en generación de PDFs
+
+## Motivo de cambio
+
+Se identificó la necesidad de optimizar el consumo de recursos durante la generación de PDFs para usuarios concurrentes, ya que el sistema actual no puede manejar eficientemente múltiples solicitudes simultáneas.
+
+## Cambios realizados
+
+- Migración a imágenes Docker más livianas
+- Implementación de sistema de archivos temporales
+- Optimización de parámetros de Puppeteer
+- Actualización de configuración de Swagger
+
+## Impacto
+
+- Reducción del tiempo de generación de PDFs
+- Mayor estabilidad en entornos de producción
+
+## Archivos clave
+
+- `src/pdf-generator/pdf.service.ts`: Optimización de generación
+- `docker/Dockerfile.prod`: Configuración de contenedores
+- `src/config/puppeteer.config.ts`: Parámetros optimizados
+
+## Tareas relacionadas
+
+#64387

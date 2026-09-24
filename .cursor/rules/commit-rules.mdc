@@ -1,0 +1,63 @@
+---
+description: Convención obligatoria para mensajes de commit (formato `#NROTarea : TÍTULO EN MAYÚSCULAS` + cuerpo en español) extrayendo el número desde el nombre del branch; usar cuando se solicite crear/draftear commits o mensajes de commit.
+globs:
+alwaysApply: true
+---
+# Reglas para Mensajes de Commit
+
+## Formato Obligatorio
+
+```
+#NROTarea : Título descriptivo de la feature EN MAYUSCULAS
+
+Descripción detallada de los cambios globales realizados.
+
+Tomar el numero de la tarea del nombre de la rama. En general las ramas tienen el estilo features/NroTarea_descricpion, o bugfix/Nrotarea_descripcion
+```
+
+## Reglas Específicas
+
+1. **Número de Tarea**: El mensaje DEBE comenzar con `#NROTarea` donde NROTarea es el número de tarea extraído automáticamente del nombre del branch actual.
+
+2. **Título**: Después del número de tarea, debe incluirse un título descriptivo que explique claramente la feature que se está implementando o el problema que se está resolviendo.
+
+3. **Descripción**: El cuerpo del commit debe detallar a grandes rasgos los cambios más importantes realizados, explicando el "qué" y el "por qué" de los cambios.
+
+4. **Idioma**: Todos los mensajes de commit DEBEN estar escritos en español.
+
+## Ejemplos
+
+### Ejemplo 1: Nueva Funcionalidad
+
+```
+#1234 : Implementación de módulo de intercambio de divisas
+
+Se agregó el nuevo módulo para gestionar el intercambio de divisas con las siguientes características:
+- Controlador para procesar archivos XML de tasas de cambio
+- Integración con el sistema de procesos existente
+- Manejo de errores para casos de fallo en la carga
+```
+
+### Ejemplo 2: Corrección de Bug
+
+```
+#5678 : Corrección de error en validación de archivos
+
+Se solucionó el problema de validación que permitía cargar archivos con formato incorrecto:
+- Se agregaron validaciones adicionales para el formato XML
+- Se mejoró el mensaje de error para el usuario
+- Se añadieron pruebas para verificar el comportamiento correcto
+```
+
+## Extracción del Número de Tarea
+
+El número de tarea debe extraerse automáticamente del nombre del branch actual. Por ejemplo:
+
+- Si el branch es `feature/1234-nueva-funcionalidad`, el número de tarea es `1234`
+- Si el branch es `bugfix/5678-correccion-error`, el número de tarea es `5678`
+
+## Notas Adicionales
+
+- Los mensajes deben ser claros y concisos
+- Evitar información redundante o detalles técnicos muy específicos
+- Enfocarse en el impacto del cambio desde la perspectiva del usuario o del negocio
