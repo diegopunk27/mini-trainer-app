@@ -26,6 +26,7 @@ Use these skills for detailed patterns on-demand:
 | `commit`     | Git commit conventions with task number extraction      | [SKILL.md](skills/commit/SKILL.md)     |
 | `pr`         | Pull request creation and template guidelines           | [SKILL.md](skills/pr/SKILL.md)         |
 | `docs`       | Documentation standards                                 | [SKILL.md](skills/docs/SKILL.md)       |
+| `pwa-offline` | Registro offline de la PWA                            | [SKILL.md](skills/pwa-offline/SKILL.md) |
 | `skill-sync` | Sync skill metadata to AGENTS.md                        | [SKILL.md](skills/skill-sync/SKILL.md) |
 
 ### Technical Stack Skills
@@ -58,6 +59,8 @@ When performing these actions, ALWAYS invoke the corresponding skill FIRST:
 | Action                                                           | Skill                  |
 | ---------------------------------------------------------------- | ---------------------- |
 | Adding a component                                               | `components`           |
+| Implementing offline workout logging                             | `pwa-offline`          |
+| Syncing the outbox after reconnect                               | `pwa-offline`          |
 | Adding a feature module                                          | `modules`              |
 | Adding a hook                                                    | `hooks`                |
 | After creating/modifying a skill                                 | `skill-sync`           |
